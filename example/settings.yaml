@@ -1,0 +1,41 @@
+db:
+  host: 'localhost'
+  port: 27017
+  user: 'user_database'
+  pass: 'pass_database'
+  name: 'database_name'
+
+webserver:
+  host            : 'localhost'
+  http_enabled    : true
+  http_port       : 3001
+  https_enabled   : true
+  https_port      : 8443
+
+ssl_certificates:
+  key  : './certificates/my_cert.key'
+  cert : './certificates/my_cert.crt'
+  ca   : false
+
+cors_whitelist : ['http://example.com:8080','https://another-example.com:443']
+
+secret_token: 'MY_SECRET_TOKEN'
+
+jwt_credentials:
+  1:
+    id: '54a8ce618e91b0b13665e2f9'
+    username: 'angular-frontend'
+    password: 'clave.segura.1'
+    time_exp: '1m'
+  2:
+    id: '605a3f8282d6f81a5bbbc57a'
+    username: 'mobile-app'
+    password: 'clave.segura.2'
+    time_exp: '2d'
+
+language: 'EN'
+
+models:
+  users: './models/users'
+
+custom_routes_file: './routes/custom_routes'
