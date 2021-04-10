@@ -5,7 +5,7 @@
 //Import modules:
 const mongoose = require('mongoose');
 const { body } = require('express-validator');
-const loloBackend = require('../lolo-backend');
+const loloBackend = require('lolo-backend');
 
 //Define Pre-Schema (Only if a password field exists):
 //For the rest of the cases use Schema directly.

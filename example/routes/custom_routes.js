@@ -3,7 +3,7 @@
 // In this file declare your custom routes manually.
 //--------------------------------------------------------------------------------------------------------------------//
 const express           = require('express');                   //Import external modules (express).
-const loloBackend       = require('../lolo-backend');
+const loloBackend       = require('lolo-backend');
 
 //Create Router.
 const router = express.Router();
