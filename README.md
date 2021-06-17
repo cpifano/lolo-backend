@@ -177,6 +177,7 @@ In this file all the parameters to suit your backend server must be defined and 
     cert : './certificates/my_cert.crt'
     ca   : false
   
+  cors_enabled: true
   cors_whitelist : ['http://example.com:8080','https://another-example.com:443']
   
   secret_token: 'MY_SECRET_TOKEN'

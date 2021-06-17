@@ -1,6 +1,6 @@
 {
   "name": "lolo-backend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lolo Backend is a REST Framework and provides an automatic CRUD backend server generator based on your models' definitions and validation rules for Node.js and MongoDB.",
   "main": "index.js",
   "directories": {
