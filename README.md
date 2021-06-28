@@ -1,4 +1,4 @@
-![Header_image](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/header.png)
+![Header_image](img/header.png)
 
 
 
@@ -56,7 +56,7 @@ npm install lolo-backend
 
 
 
-![three_steps](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/three_steps.png)
+![three_steps](img/three_steps.png)
 
 
 
@@ -242,7 +242,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 
 
-![jwt](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/jwt.png)
+![jwt](img/jwt.png)
 
 
 
@@ -260,6 +260,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 | ---------- | :-------------------: | ------------- | ------------------------------------------------------------ |
 | **POST**   |          No           | jwt-login     | Generates a token ([JWT](https://jwt.io/)) using authentication (`settings.yaml > credentials`). |
 | **GET**    |          Yes          | describe      | Returns all the model's keys.                                |
+| **GET**    |          Yes          | count         | Returns the number of documents that matches a specified filters. |
 | **GET**    |          Yes          | find          | Finds all the records in the collection that match the filters, the projection and the requested sort. |
 | **GET**    |          Yes          | findById      | Finds an element based on an ID (`MongoDB _id`).             |
 | **GET**    |          Yes          | findOne       | Finds a single item (first occurrence), in the collection that matches the filters, the projection and the requested sort. |
@@ -284,7 +285,13 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   + Does not admit parameters.
 
-    
+  
+  
++ count
+
+  * **filter**[`field_name`] = *string, number, boolean*.
+
+  
 
 * find 
 
