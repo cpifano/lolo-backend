@@ -1,4 +1,4 @@
-![Header_image](img/header.png)
+![Header_image](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/header.png)
 
 
 
@@ -56,7 +56,7 @@ npm install lolo-backend
 
 
 
-![three_steps](img/three_steps.png)
+![three_steps](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/three_steps.png)
 
 
 
@@ -242,7 +242,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 
 
-![jwt](img/jwt.png)
+![jwt](https://raw.githubusercontent.com/cpifano/lolo-backend/main/img/jwt.png)
 
 
 
@@ -256,29 +256,31 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 
 
-| METHOD     | REQUIRES BEARER TOKEN | PATH / URL    | DESCRIPTION                                                  |
-| ---------- | :-------------------: | ------------- | ------------------------------------------------------------ |
-| **POST**   |          No           | jwt-login     | Generates a token ([JWT](https://jwt.io/)) using authentication (`settings.yaml > credentials`). |
-| **GET**    |          Yes          | describe      | Returns all the model's keys.                                |
-| **GET**    |          Yes          | count         | Returns the number of documents that matches a specified filters. |
-| **GET**    |          Yes          | find          | Finds all the records in the collection that match the filters, the projection and the requested sort. |
-| **GET**    |          Yes          | findById      | Finds an element based on an ID (`MongoDB _id`).             |
-| **GET**    |          Yes          | findOne       | Finds a single item (first occurrence), in the collection that matches the filters, the projection and the requested sort. |
-| **POST**   |          Yes          | insert        | Creates a new record in the database.                        |
-| **PUT**    |          Yes          | update        | Validates against the model and if positive, updates an existing record in the database according to the ID (`MongoDB _id`), and specified parameters. |
-| **DELETE** |          Yes          | delete        | Deletes an item from the database based on an ID (`MongoDB _id`). |
-| **POST**   |          Yes          | checkPassById | Checks password (`password type field`) according to the ID (`MongoDB _id`). |
+| METHOD   | REQUIRES BEARER TOKEN | PATH / URL    | DESCRIPTION                                                  |
+| -------- | :-------------------: | ------------- | ------------------------------------------------------------ |
+| **POST** |          No           | jwt-login     | Generates a token ([JWT](https://jwt.io/)) using authentication (`settings.yaml > credentials`). |
+| **GET**  |          Yes          | describe      | Returns all the model's keys.                                |
+| **GET**  |          Yes          | count         | Returns the number of documents that matches a specified filters. |
+| **GET**  |          Yes          | find          | Finds all the records in the collection that match the filters, the projection and the requested sort. |
+| **GET**  |          Yes          | findById      | Finds an element based on an ID (`MongoDB _id`).             |
+| **GET**  |          Yes          | findOne       | Finds a single item (first occurrence), in the collection that matches the filters, the projection and the requested sort. |
+| **POST** |          Yes          | insert        | Creates a new record in the database.                        |
+| **POST** |          Yes          | update        | Validates against the model and if positive, updates an existing record in the database according to the ID (`MongoDB _id`), and specified parameters. |
+| **POST** |          Yes          | delete        | Deletes an item from the database based on an ID (`MongoDB _id`). |
+| **POST** |          Yes          | checkPassById | Checks password (`password type field`) according to the ID (`MongoDB _id`). |
 
 
 
-#### Supported parameters
+#### Supported parameters & forms
 
 * jwt-login
+
+  ​	`admit: x-www-form-urlencoded`
 
   * **username** = *username* defined in your **settings.yaml** file in the credentials section. `REQUIRED`
 
   * **password** = *password* defined in your **settings.yaml** file in the credentials section. `REQUIRED`
-
+  
     
 
 + describe
@@ -289,11 +291,15 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
   
 + count
 
-  * **filter**[`field_name`] = *string, number, boolean*.
+  ​	`admit: URL Query Parameters`
 
+  * **filter**[`field_name`] = *string, number, boolean*.
+  
   
 
-* find 
+* find
+
+  ​	`admit: URL Query Parameters`
 
   * **filter**[`field_name`] = *string, number, boolean*.
 
@@ -307,6 +313,8 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 * findById
 
+  ​	`admit: URL Query Parameters`
+
   * **id** = *MongoDB  _id*. `REQUIRED`
 
   * **proj**[`field_name`] = *number* (1 or 0 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
@@ -314,6 +322,8 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
     
 
 * findOne
+
+  ​	`admit: URL Query Parameters`
 
   * **filter**[`field_name`] = *string, number, boolean*.
   * **proj**[`field_name`] = *number* (1 or 0 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
@@ -323,11 +333,15 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 * insert
 
+  ​	`admit: x-www-form-urlencoded`
+
   * Your models' fields: **name_field** = *value*. `REQUIRED`
 
   
 
 * update
+
+  ​	`admit: x-www-form-urlencoded`
 
   * **id** = *MongoDB  _id*. `REQUIRED`
 
@@ -337,12 +351,16 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 * delete
 
+  ​	`admit: x-www-form-urlencoded`
+
   * **id** = *MongoDB  _id*. `REQUIRED`
 
     
 
 * checkPassById
 
+  ​	`admit: x-www-form-urlencoded`
+  
   * **id** = *MongoDB  _id*. `REQUIRED`
   * `password_field_name` = *password_to_check*. `REQUIRED`
 
