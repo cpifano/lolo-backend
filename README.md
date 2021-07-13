@@ -305,7 +305,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   * **proj**[`field_name`] = *number* (1 or 0 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
 
-  * **sort**[`field_name`] = *number* (1 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
+  * **sort**[`field_name`] = *number* (1 or -1 - Based on [MongoDB](https://www.mongodb.com/en/) Sort definitions).
 
   * **limit** = *number*
 
@@ -327,7 +327,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   * **filter**[`field_name`] = *string, number, boolean*.
   * **proj**[`field_name`] = *number* (1 or 0 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
-  * **sort**[`field_name`] = *number* (1 - Based on [MongoDB](https://www.mongodb.com/en/) Projections).
+  * **sort**[`field_name`] = *number* (1 or -1 - Based on [MongoDB](https://www.mongodb.com/en/) Sort definitions).
 
   
 
