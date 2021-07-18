@@ -271,9 +271,9 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 
 
-#### Supported parameters & forms
+### Supported parameters & forms
 
-* jwt-login
+* #### jwt-login
 
   ​	`admit: x-www-form-urlencoded`
 
@@ -283,13 +283,13 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
   
     
 
-+ describe
++ #### describe
 
   + Does not admit parameters.
 
   
   
-+ count
++ #### count
 
   ​	`admit: URL Query Parameters`
 
@@ -297,7 +297,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
   
   
 
-* find
+* #### find
 
   ​	`admit: URL Query Parameters`
 
@@ -307,11 +307,13 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   * **sort**[`field_name`] = *number* (1 or -1 - Based on [MongoDB](https://www.mongodb.com/en/) Sort definitions).
 
+  * **skip** = *number*
+
   * **limit** = *number*
 
     
 
-* findById
+* #### findById
 
   ​	`admit: URL Query Parameters`
 
@@ -321,7 +323,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
     
 
-* findOne
+* #### findOne
 
   ​	`admit: URL Query Parameters`
 
@@ -331,7 +333,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   
 
-* insert
+* #### insert
 
   ​	`admit: x-www-form-urlencoded`
 
@@ -339,7 +341,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   
 
-* update
+* #### update
 
   ​	`admit: x-www-form-urlencoded`
 
@@ -349,7 +351,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
     
 
-* delete
+* #### delete
 
   ​	`admit: x-www-form-urlencoded`
 
@@ -357,7 +359,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
     
 
-* checkPassById
+* #### checkPassById
 
   ​	`admit: x-www-form-urlencoded`
   
@@ -366,7 +368,7 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
 
 
-#### Set password case
+### Set password case
 
 If your model has a password type field, it must be specified with the **isPassword()** method of **Lolo Backend's** middleware **crudMiddleware** and this field will automatically be encrypted before being saved.
 
