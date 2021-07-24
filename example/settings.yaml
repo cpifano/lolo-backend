@@ -9,7 +9,7 @@ webserver:
   host            : 'localhost'
   http_enabled    : true
   http_port       : 3001
-  https_enabled   : true
+  https_enabled   : false
   https_port      : 8443
 
 ssl_certificates:
@@ -17,7 +17,7 @@ ssl_certificates:
   cert : './certificates/my_cert.crt'
   ca   : false
 
-cors_enabled: true
+cors_enabled: false
 cors_whitelist : ['http://example.com:8080','https://another-example.com:443']
 
 secret_token: 'MY_SECRET_TOKEN'
@@ -39,4 +39,5 @@ language: 'EN'
 models:
   users: './models/users'
 
+custom_routes_enabled: true
 custom_routes_file: './routes/custom_routes'

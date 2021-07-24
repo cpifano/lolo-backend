@@ -59,7 +59,7 @@ const Validator = [
         .trim()
         .isEmail()
         .withMessage('The value entered is not a valid email.')
-        .normalizeEmail()
+        .normalizeEmail({ gmail_remove_dots: false })
         .toLowerCase(),
 
     body('status')

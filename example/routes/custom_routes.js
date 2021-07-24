@@ -12,8 +12,8 @@ const router = express.Router();
 const welcomeMessage = {
     success:        true,
     message:        "Welcome to Lolo Backend REST Framework",
-    description:    "Lolo Backend REST Framework provides an automatic CRUD Backend Server generator based on your models' definitions and validation rules.",
-    version:        "2.0.1",
+    description:    "Lolo Backend REST Framework provides an automatic asynchronous CRUD Backend Server generator based on your models' definitions and validation rules.",
+    version:        "2.1.0",
     info:           "This version work with NodeJS and MongoDB."
 }
 

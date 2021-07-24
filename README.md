@@ -2,7 +2,7 @@
 
 
 
-**Lolo Backend** is a REST Framework and provides an automatic CRUD backend server generator based on your models' definitions and validation rules for [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/en/).
+**Lolo Backend** is a REST Framework and provides an automatic asynchronous CRUD backend server generator based on your models' definitions and validation rules for [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/en/).
 
 It is extremely easy to implement and provides a great variety of tools and possibilities for the implementation of a RESTful backend server.
 
@@ -33,6 +33,8 @@ npm install lolo-backend
 * Uses [mongoose](https://mongoosejs.com/docs/) data modeling.
 * Automatic integration of [express-validator](https://express-validator.github.io/docs/) for validation rules.
 * Automatic encryption of password type fields with [bcrypt](https://www.npmjs.com/package/bcrypt).
+* Provides asynchronous responses.
+* The **find** method provides a **pager** (*Resolved pagination functions*).
 * Offers the possibility to set custom routes, out of automatic CRUD routing.
 * Independent response translation module.
 
@@ -122,7 +124,7 @@ On the other hand, for validation rules and data normalization, **Lolo Backend**
           .trim()
           .isEmail()
           .withMessage('The value entered is not a valid email.')
-          .normalizeEmail()
+          .normalizeEmail({ gmail_remove_dots: false })
           .toLowerCase(),
   
       body('status')
@@ -169,7 +171,7 @@ In this file all the parameters to suit your backend server must be defined and 
     host            : 'localhost'
     http_enabled    : true
     http_port       : 8080
-    https_enabled   : true
+    https_enabled   : false
     https_port      : 8443
   
   ssl_certificates:
@@ -177,7 +179,7 @@ In this file all the parameters to suit your backend server must be defined and 
     cert : './certificates/my_cert.crt'
     ca   : false
   
-  cors_enabled: true
+  cors_enabled: false
   cors_whitelist : ['http://example.com:8080','https://another-example.com:443']
   
   secret_token: 'MY_SECRET_TOKEN'
@@ -199,6 +201,7 @@ In this file all the parameters to suit your backend server must be defined and 
   models:
     users: './models/users'
   
+  custom_routes_enabled: false
   custom_routes_file: './routes/custom_routes'
   ```
 
@@ -307,10 +310,19 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
   * **sort**[`field_name`] = *number* (1 or -1 - Based on [MongoDB](https://www.mongodb.com/en/) Sort definitions).
 
-  * **skip** = *number*
+  * **skip** = *number*.
 
-  * **limit** = *number*
+  * **limit** = *number*.
 
+  * **pager[page_number]** = *number*.
+
+  * **pager[page_limit]** = *number*.
+
+    
+    
+    ***Important note:***
+    *"If you use the **pager** parameters, keep in mind these overwrite the **skip** and **limit** parameters".*
+    
     
 
 * #### findById
@@ -418,7 +430,7 @@ The request method **checkPassById** is available to validate the saved password
           .trim()
           .isEmail()
           .withMessage('The value entered is not a valid email.')
-          .normalizeEmail()
+          .normalizeEmail({ gmail_remove_dots: false })
           .toLowerCase(),
   
       body('status')
