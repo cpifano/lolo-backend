@@ -207,6 +207,16 @@ In this file all the parameters to suit your backend server must be defined and 
 
 
 
+> **Important note `jwt_credentials`:** 
+>
+> * **time_exp:** Expressed in seconds or a string describing a time span [zeit/ms](https://github.com/zeit/ms).
+>
+> ---
+>
+> **Example:**  `60`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string  be sure you provide the time units (days, hours, etc), otherwise  milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
+
+
+
 ---
 
 
@@ -320,8 +330,8 @@ Once the **Lolo Backend** is up and running, the following functions will be ava
 
     
     
-    ***Important note:***
-    *"If you use the **pager** parameters, keep in mind these overwrite the **skip** and **limit** parameters".*
+    > ***Important note `pager`:***
+    > *"If you use the **pager** parameters, keep in mind these overwrite the **skip** and **limit** parameters".*
     
     
 
