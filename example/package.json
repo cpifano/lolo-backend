@@ -16,6 +16,6 @@
   "author": "Camilo Pifano Herrera",
   "license": "MIT",
   "dependencies": {
-    "lolo-backend": "^2.1.0"
+    "lolo-backend": "^2.2.0"
   }
 }

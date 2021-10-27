@@ -4,7 +4,7 @@
 
 **Lolo Backend** is a REST Framework and provides an automatic asynchronous CRUD backend server generator based on your models' definitions and validation rules for [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/en/).
 
-It is extremely easy to implement and provides a great variety of tools and possibilities for the implementation of a RESTful backend server.
+It is extremely easy to implement and provides a great variety of tools and possibilities for the implementation of a lightweight  and strong RESTful backend server.
 
 
 
@@ -160,48 +160,63 @@ In this file all the parameters to suit your backend server must be defined and 
 * Example of the contents of the **settings.yaml** file:
 
   ```yaml
+  # MongoDB server settings:
   db:
     host: 'localhost'
     port: 27017
-    user: 'database_user'
-    pass: 'database_pass'
+    user: 'user_database'
+    pass: 'pass_database'
     name: 'database_name'
   
+  # Web server settings:
   webserver:
     host            : 'localhost'
     http_enabled    : true
-    http_port       : 8080
+    http_port       : 3001
     https_enabled   : false
     https_port      : 8443
   
+  # SSL settings (Only if https_enabled is true):
   ssl_certificates:
     key  : './certificates/my_cert.key'
     cert : './certificates/my_cert.crt'
     ca   : false
   
+  # Set CORS and CORS whitelist:
   cors_enabled: false
   cors_whitelist : ['http://example.com:8080','https://another-example.com:443']
   
+  # Determine whether to use verbose mode:
+  verbose_log_enabled: true
+  
+  # Set your secret token:
+  # For your safety change this value please.
   secret_token: 'MY_SECRET_TOKEN'
   
+  # Establish JWT credentials for service consumers:
   jwt_credentials:
     1:
       id: '54a8ce618e91b0b13665e2f9'
       username: 'angular-frontend'
-      password: 'secure_pass_one'
-      time_exp: '1m'
+      password: 'clave.segura.1'
+      time_exp: '1d'
     2:
       id: '605a3f8282d6f81a5bbbc57a'
       username: 'mobile-app'
-      password: 'secure_pass_two'
+      password: 'clave.segura.2'
       time_exp: '2d'
   
+  # Set the language of the responses:
   language: 'EN'
   
+  # Establish your models and their names:
   models:
     users: './models/users'
   
-  custom_routes_enabled: false
+  # Determine whether to use custom routes:
+  custom_routes_enabled: true
+  
+  # Set your custom routes file (Only if custom_routes_enabled is true):
   custom_routes_file: './routes/custom_routes'
   ```
 
