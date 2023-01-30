@@ -2,9 +2,11 @@
 
 
 
-**Lolo Backend** is a REST Framework and provides an automatic asynchronous CRUD backend server generator based on your models' definitions and validation rules for [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/en/).
+**Lolo Backend** is a REST Framework and provides an automatic asynchronous CRUD (Non-Production) **backend test server** generator based on your models' definitions and validation rules for [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/en/).
 
 It is extremely easy to implement and provides a great variety of tools and possibilities for the implementation of a lightweight  and strong RESTful backend server.
+
+The purpose of this framework is to provide a quick and easy test server for frontend developers.
 
 
 
