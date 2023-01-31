@@ -13,7 +13,7 @@ const welcomeMessage = {
     success:        true,
     message:        "Welcome to Lolo Backend REST Framework",
     description:    "Lolo Backend REST Framework provides an automatic asynchronous CRUD Backend Server generator based on your models' definitions and validation rules.",
-    version:        "2.2.0",
+    version:        "2.2.1",
     info:           "This version work with NodeJS and MongoDB."
 }
 
